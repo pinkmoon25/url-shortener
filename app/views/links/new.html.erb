@@ -1,0 +1,15 @@
+<h1> Welcome to Mini URL!</h1>
+
+<%= form_with model: @link do |form| %>
+  <div>
+    <%= form.label :URL %>
+    <%= form.text_field :long_url %>
+  </div>
+  <div> 
+    <%= form.label :alias %>
+    <%= form.text_field :alias %>
+  </div>
+  <button>
+  <%= form.submit %>
+  </button>
+<%end%>

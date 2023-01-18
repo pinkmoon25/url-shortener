@@ -1,0 +1,7 @@
+<h1> Your mini Links </h1>
+
+<ul>
+<% @links.each do |l|%>
+<li> <a href=<%=l.long_url%> target="_blank"><%= l.short_url %></a> </li>
+<%end%>
+</ul>
