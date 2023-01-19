@@ -1,15 +1,18 @@
-<h1> Welcome to Mini URL!</h1>
-
-<%= form_with model: @link do |form| %>
-  <div>
-    <%= form.label :URL %>
-    <%= form.text_field :long_url %>
-  </div>
-  <div> 
-    <%= form.label :alias %>
-    <%= form.text_field :alias %>
-  </div>
-  <button>
-  <%= form.submit %>
-  </button>
-<%end%>
+<div class='w-full flex justify-center py-6 bg-amber-500'>
+  <h1 class='text-white text-2xl'> Welcome to Mini URL!</h1>
+</div>
+<div class='w-80 mx-auto my-8'>
+  <%= form_with model: @link, class:"flex flex-col gap-4 items-center" do |form| %>
+    <div>
+      <%= form.label :URL %>
+      <%= form.text_field :long_url %>
+    </div>
+    <div> 
+      <%= form.label :alias %>
+      <%= form.text_field :alias %>
+    </div>
+    <button class='p-2 rounded bg-amber-600 text-white'>
+    <%= form.submit %>
+    </button>
+  <%end%>
+</div>

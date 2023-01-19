@@ -2,6 +2,6 @@
 
 <ul>
 <% @links.each do |l|%>
-<li> <a href=<%=l.long_url%> target="_blank"><%= l.short_url %></a> </li>
+<li> <%= link_to l.short_url, link_path(l) %> </li>
 <%end%>
 </ul>
