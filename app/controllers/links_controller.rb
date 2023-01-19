@@ -16,18 +16,26 @@ class LinksController < ApplicationController
       redirect_to root_path
       return
     else
-      link.short_url = "https://mini/#{link.alias}"
+      link.short_url = "http://localhost:3000/#{link.alias}"
     end      
     if link.save
       flash[:notice] = "You got it!"
       redirect_to links_path
     else
-      flash[:alert] = link.errors.full_messages
-      render :new
+      flash.now[:alert] = link.errors.full_messages.first
+      redirect_to root_path
+      return
     end
   end
 
   def show
+    link = Link.find(params[:id])
+    redirect_to link.long_url, allow_other_host: true
+  end
+
+  def visit_link
+    link = Link.find_by(short_url: "http://localhost:3000/#{params[:uuid]}")
+    redirect_to link.long_url, allow_other_host: true
   end
 
   private
