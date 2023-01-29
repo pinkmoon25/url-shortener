@@ -1,0 +1,19 @@
+<h1 class='w-full py-6 flex justify-center text-2xl'> Sign Up </h1>
+<div class='w-80 mx-auto my-8'>
+  <%= form_with model: @user, url: registrations_path, class:'flex flex-col items-center gap-4' do |form|%>
+    <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.full_messages.each do |message|%>
+          <li><p><%= message %> </p></li>  
+        <%end%>
+      </ul>
+    <%end%>
+    <%= form.label :Username%>
+    <%= form.text_field :username, placeholder:'username'%>
+    <%= form.label :Password%>
+    <%= form.password_field :password, placeholder:'password'%>
+    <%= form.label :password_confirmation, "Password Confirmation"%>
+    <%= form.password_field :password_confirmation, placeholder:'password'%>
+    <%= form.submit 'Sign Up'%>
+  <%end%>
+</div>
