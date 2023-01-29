@@ -3,7 +3,11 @@
     <h1 class='text-white text-2xl'> Welcome to Mini URL!</h1>
     <div class="flex items-center gap-4 justify-between">
       <%= link_to 'Sign In', new_session_path %>
+      <% if Current.user %>
+      <p><%= Current.user.username %> </p>
       <%= button_to 'Logout', logout_path, method: :delete %>
+      <% end %>
+      <%= link_to "My links", links_path%>
     </div>
   </nav>
 </header>
