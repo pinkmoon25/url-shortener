@@ -1,15 +1,19 @@
-<div class='w-full flex justify-center py-6 bg-amber-500'>
-  <h1 class='text-white text-2xl'> Welcome to Mini URL!</h1>
-</div>
 <div class='w-80 mx-auto my-8'>
   <%= form_with model: @link, class:"flex flex-col gap-4 items-center" do |form| %>
+    <% if @link.errors.any? %>
+      <div> 
+        <% @link.errors.full_messages.each do |message| %>
+          <p><%= message %></p>
+        <%end%>
+      </div>
+    <%end%>
     <div>
       <%= form.label :URL %>
-      <%= form.text_field :long_url %>
+      <%= form.url_field :long_url, placeholder: 'https://yoururl/' %>
     </div>
     <div> 
       <%= form.label :alias %>
-      <%= form.text_field :alias %>
+      <%= form.text_field :alias, placeholder: 'optional(3 to 7 chars)' %>
     </div>
     <button class='p-2 rounded bg-amber-600 text-white'>
     <%= form.submit %>
