@@ -15,23 +15,22 @@ class LinksController < ApplicationController
   end
 
   def create
-    link = Link.new(link_params)
-    link.user = Current.user
-    if link.alias.empty?
-      link.short_url = link.generate_mini_url
-    elsif Link.exists?(alias: "#{link.alias}")
+    @link = Link.new(link_params)
+    @link.user = Current.user
+    if @link.alias.empty?
+      @link.short_url = @link.generate_mini_url
+    elsif Link.exists?(alias: "#{@link.alias}")
       flash[:alert] = "alias is taken please try another"
       redirect_to new_link_path
       return
     else
-      link.short_url = "http://localhost:3000/#{link.alias}"
+      @link.short_url = "http://localhost:3000/#{@link.alias}"
     end      
-    if link.save
+    if @link.save
       flash[:notice] = "You got it!"
       redirect_to links_path
     else
       render :new, status: 422
-      return
     end
   end
 

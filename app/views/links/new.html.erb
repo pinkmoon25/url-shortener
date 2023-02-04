@@ -1,5 +1,5 @@
 <div class='w-80 mx-auto my-8'>
-  <%= form_with model: @link, class:"flex flex-col gap-4 items-center" do |form| %>
+  <%= form_with model: @link, url: links_path, class:"flex flex-col gap-4 items-center" do |form| %>
     <% if @link.errors.any? %>
       <div> 
         <% @link.errors.full_messages.each do |message| %>
