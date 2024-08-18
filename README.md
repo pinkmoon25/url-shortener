@@ -1,24 +1,12 @@
-# README
+### URL Shortener Application 🔗
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple and efficient URL shortener built with Ruby on Rails. Instantly convert long URLs into short, easy-to-share links.
 
-Things you may want to cover:
+### Features:
+- Instant URL shortening
+- Easy to share short links
+- Scalable and secure
 
-* Ruby version
+---
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This highlights the app’s functionality and backend technology in a straightforward manner.
